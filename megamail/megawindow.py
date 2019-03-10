@@ -1,7 +1,7 @@
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gio, GLib
-
+from megastore import MegaStore
 import os
 
 
@@ -32,6 +32,7 @@ class MegaWindow(Gtk.ApplicationWindow):
         self.builder = Gtk.Builder()
         self.builder.add_from_file(resource_path("mega.glade"))
 
+        self.megastore = MegaStore()
         print("megawindow!")
 
 
